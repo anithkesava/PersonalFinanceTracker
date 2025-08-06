@@ -1,5 +1,7 @@
 <html>
   <head>
+    <title>Personal Finance Tracker</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
@@ -8,6 +10,11 @@
   <body>
     <div class="parentcontainer">
       <form class="loginpopup" autocomplete="off">
+        <!-- insert the icon of an app-->
+        <div class="img-container">
+            <img class="custom-img" src="./images/favicon.png" alt="app-icon-img">
+            <span class="title-span"><u>Track.Save.Succeed</u><span>
+        </div>
         <div class="in-row">
           <label>Username </label>
           <input id="username" type="text" placeholder="Enter Username" />
@@ -17,12 +24,17 @@
           <input id="password" type="password" placeholder="Enter Password" />
         </div>
         <div class="buttoncontainer">
-            <button disabled id="loginbtn" class="loginbtn">Login</button>
+          <button disabled id="loginbtn" class="loginbtn">Login</button>
+        </div>
+        <hr>
+        <div class="newuser">
+            <span class="newuser-span">New User?</span> 
+            <a>Create Account</a>
         </div>
       </form>
       <div class="personaltracker-desc">
         <span class="custom-span">
-          Keep Tracking your <strong> Incomes and Expenses </strong>
+          Keep Tracking your <strong> Income and Expenses </strong>
         </span>
       </div>
     </div>
