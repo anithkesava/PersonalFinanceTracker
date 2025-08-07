@@ -1,3 +1,5 @@
+
+
 class ButtonAccessible{
     constructor(user, pass, loginbtn) {
         this.username = user;
@@ -23,3 +25,4 @@ const password = document.getElementById('password');
 const loginbutton = document.getElementById('loginbtn');
 const accessiblebutton = new ButtonAccessible(username, password, loginbutton);
 accessiblebutton.accessBtn();
+
