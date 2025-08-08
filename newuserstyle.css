@@ -5,6 +5,7 @@ body{
     overflow: hidden;
 }
 .parentcontainer{
+    padding: 0.65rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,23 +17,43 @@ body{
     background: url(./images/userinput.jpg) no-repeat center /cover;
     gap: 2rem;
 }
+
+@media (max-width: 768px) {
+    .parentcontainer{
+        height: 90%;
+        width: 40%;
+        justify-content: space-evenly;
+    }    
+}
 .profile-picture{
     position: relative;
-    z-index: 0;
+    top:1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: gray;
+    cursor: pointer;
     height: 10rem;
     width: 10rem;
     border-radius: 50%;
-    background-color: gray;
-    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .profile-picture{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+    }
 }
 .user-icon{
-    font-size: 6rem;
-    font-weight: bold;  
+    font-size: 2rem; 
     opacity: 80%;  
+}
+@media (max-width: 768px) {
+    .user-icon{
+        font-size: 40px;
+    }
+    
 }
 .img-container{
     object-fit: cover;
@@ -41,12 +62,32 @@ body{
     width: 10rem;
     border-radius: 50%;
 }
+@media (max-width: 768px) {
+    .img-container{
+        height: 5rem;
+        width: 5rem;
+    }
+    
+}
 label{
     height: 1.5rem;
     width: 12rem;
     color: black;
     font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     text-transform: capitalize;
+}
+@media (max-width: 768px){
+    label{
+        height: 1.10rem;
+        width: 6rem;
+        font-size: x-small;
+        font-family: monospace;
+        text-transform: none;
+    }
 }
 .in-row{
     display: flex;
@@ -55,6 +96,13 @@ label{
     align-items: center;
     width: 30rem;
     height: 3rem;
+}
+@media (max-width:768px){
+    .in-row{
+        justify-content: space-around;
+        width:20rem;
+        height: 1rem;
+    }
 }
 input{    
     background-color: #ffff;
@@ -67,6 +115,13 @@ input{
     outline: 1px solid navajowhite;
     padding-left: 0.75rem;
     transition: 0.3s ease-in;
+}
+@media (max-width:768px){
+    input{
+        font-size: x-small;
+        height: 1.10rem;
+        width: 12rem;
+    }
 }
 .savebtn{
     background: linear-gradient(to right, indigo, purple);
@@ -81,11 +136,25 @@ input{
     cursor: pointer;
     transition: 0.2s ease;
 }
+@media (max-width: 768px){
+    .savebtn{
+        width: 4rem;
+        height: 1.25rem;
+        font-size: x-small;
+    }
+}
 .savebtn:active{
     transform: scale(1.1) ;
 }
 i{
     color: white;
+}
+@media (max-width: 768px) {
+    i{
+        font-weight: normal;
+        font-size: small;
+    }
+    
 }
 .profilepicture-upload{
     display: none;
@@ -101,17 +170,40 @@ i{
     gap: 1rem;
     padding: 1.35rem;
 }
+@media (max-width: 768px){
+    .profilepicture-upload{
+        height: 6rem;
+        width: 12rem;
+    }
+}
 .upload-picture-container{
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    align-items: flex-start;
+    gap: 0.25rem;
     width: 23rem;
+}
+@media (max-width: 768px){
+    .upload-picture-container{
+        gap:0.25;
+        width: 14rem;
+        justify-content: space-between;
+        font-size: x-small;
+    }
 }
 .picture-input{
     height: 1.5rem;
     width: 10rem;
     outline: none;
+}
+@media (max-width: 768px) {
+    .picture-input{
+        position: relative;
+        right: 1rem;
+        width: 6rem;
+    }
+    
 }
 .save-btn{
     background-color: green;
@@ -125,6 +217,14 @@ i{
     border: none;
     border-radius: 4px;
 }
+@media (max-width: 768px) {
+    .save-btn{
+        width: 3rem;
+        font-size: x-small;
+        height: 1.5rem;
+    }
+    
+}
 .cancel-btn{
     background-color: red;
     color: white;
@@ -137,6 +237,13 @@ i{
     border: none;
     border-radius: 4px;
 }
+@media (max-width: 768px){
+    .cancel-btn{
+        width: 3rem;
+        font-size: x-small;
+        height: 1.5rem;   
+    }
+}
 .upload-picture-btns{
     display: flex;
     flex-direction: row;
@@ -144,4 +251,27 @@ i{
     align-items: center;
     width: 20rem;
     height: 3rem;
+}
+@media (max-width: 768px){
+    .upload-picture-btns{
+        width: 12rem;
+        height: 1.5rem;
+    }
+}
+.inputs-and-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 50rem;
+
+}
+@media (max-width: 768px) {
+    .inputs-and-button{
+        height: 12rem;
+        width: 20rem;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
 }

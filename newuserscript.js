@@ -11,14 +11,16 @@ function openpopup() {
 function saveimg() {
   const ispictureexists = localStorage.getItem("profilepicture");
   if (ispictureexists) {
-      localStorage.removeItem("profilepicture");
-      const profilepicture = document.getElementById('profileimgId');
+    localStorage.removeItem("profilepicture");
+    const profilepicture = document.getElementById("profileimgId");
+    if (profilepicture) {
       profilepicture.remove();
+    }
   }
 
   const profilecontainer = document.getElementById("profilecontainerid");
-    const img = document.createElement("img");
-    img.id = 'profileimgId';
+  const img = document.createElement("img");
+  img.id = "profileimgId";
   const defaulticon = document.getElementById("defaultimg");
 
   const fileInput = document.getElementById("fileinput");

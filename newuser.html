@@ -18,48 +18,61 @@
     <div class="parentcontainer">
       <div class="profilepicture-upload">
         <div class="upload-picture-container">
-          <label>upload your profile picture</label>
-          <input id="fileinput" class="picture-input" type="file" accept="image/*" />
+          <label>upload photo</label>
+          <input
+            id="fileinput"
+            class="picture-input"
+            type="file"
+            accept="image/*"
+          />
         </div>
         <div class="upload-picture-btns">
-            <button id="savebtn" onclick="saveimg()" class="save-btn">Save</button>
-            <button onclick="closepopup()" class="cancel-btn">Cancel</button>
+          <button id="savebtn" onclick="saveimg()" class="save-btn">
+            Save
+          </button>
+          <button onclick="closepopup()" class="cancel-btn">Cancel</button>
         </div>
       </div>
-      <div id="profilecontainerid" onclick="openpopup()" class="profile-picture">
+      <div
+        id="profilecontainerid"
+        onclick="openpopup()"
+        class="profile-picture"
+      >
         <!-- need to insert img and remove the i by using js-->
         <i id="defaultimg" class="fa-solid fa-user user-icon"></i>
       </div>
-      <div class="in-row">
-        <i class="fa-solid fa-user"></i>
-        <input
-          type="text"
-          placeholder="Enter the Username"
-          autocomplete="off"
-        />
-      </div>
-      <div class="in-row">
-        <i class="fa-solid fa-envelope"></i>
-        <input type="email" placeholder="Enter the email" />
-      </div>
-      <div class="in-row">
-        <i class="fa-solid fa-key"></i>
-        <input
-          type="password"
-          placeholder="Enter the password"
-          autocomplete="off"
-        />
-      </div>
-      <div class="in-row">
-        <i class="fa-solid fa-key"></i>
-        <input
-          type="password"
-          placeholder="Enter the password again"
-          autocomplete="off"
-        />
-      </div>
-      <div class="savebtn-container">
-        <button class="savebtn">Save</button>
+      <div class="inputs-and-button">
+        <div class="in-row">
+          <i class="fa-solid fa-user"></i>
+          <input
+            type="text"
+            placeholder="Enter the Username"
+            autocomplete="off"
+          />
+        </div>
+        <div class="in-row">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" placeholder="Enter the email" />
+        </div>
+        <div class="in-row">
+          <i class="fa-solid fa-key"></i>
+          <input
+            type="password"
+            placeholder="Enter the password"
+            autocomplete="off"
+          />
+        </div>
+        <div class="in-row">
+          <i class="fa-solid fa-key"></i>
+          <input
+            type="password"
+            placeholder="Enter the password again"
+            autocomplete="off"
+          />
+        </div>
+        <div class="savebtn-container">
+          <button class="savebtn">Save</button>
+        </div>
       </div>
     </div>
   </body>
