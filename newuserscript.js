@@ -63,3 +63,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+document.getElementById('savedetails').addEventListener('click', function () {
+    alert(screen.width);
+})
