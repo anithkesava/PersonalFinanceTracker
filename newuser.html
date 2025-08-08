@@ -22,12 +22,13 @@
           <input id="fileinput" class="picture-input" type="file" accept="image/*" />
         </div>
         <div class="upload-picture-btns">
-            <button onclick="saveimg()" class="save-btn">Save</button>
+            <button id="savebtn" onclick="saveimg()" class="save-btn">Save</button>
             <button onclick="closepopup()" class="cancel-btn">Cancel</button>
         </div>
       </div>
-      <div onclick="openpopup()" class="profile-picture">
-        <i class="fa-solid fa-user user-icon"></i>
+      <div id="profilecontainerid" onclick="openpopup()" class="profile-picture">
+        <!-- need to insert img and remove the i by using js-->
+        <i id="defaultimg" class="fa-solid fa-user user-icon"></i>
       </div>
       <div class="in-row">
         <i class="fa-solid fa-user"></i>
