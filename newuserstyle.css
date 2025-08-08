@@ -20,8 +20,8 @@ body{
 
 @media (max-width: 768px) {
     .parentcontainer{
-        height: 90%;
-        width: 40%;
+        height: 60%;
+        width: 60%;
         justify-content: space-evenly;
     }    
 }

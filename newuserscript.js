@@ -9,40 +9,46 @@ function openpopup() {
 }
 
 function saveimg() {
-  const ispictureexists = localStorage.getItem("profilepicture");
-  if (ispictureexists) {
-    localStorage.removeItem("profilepicture");
-    const profilepicture = document.getElementById("profileimgId");
-    if (profilepicture) {
-      profilepicture.remove();
-    }
-  }
-
-  const profilecontainer = document.getElementById("profilecontainerid");
-  const img = document.createElement("img");
-  img.id = "profileimgId";
-  const defaulticon = document.getElementById("defaultimg");
-
-  const fileInput = document.getElementById("fileinput");
-  const file = fileInput.files[0];
-  if (file && file.type.startsWith("image/")) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      if (defaulticon) {
-        profilecontainer.removeChild(defaulticon);
+  const input = document.getElementById("fileinput");
+  const isselectedfiles = input.files[0];
+  if (isselectedfiles) {
+    const ispictureexists = localStorage.getItem("profilepicture");
+    if (ispictureexists) {
+      localStorage.removeItem("profilepicture");
+      const profilepicture = document.querySelector(".img-container");
+      if (profilepicture) {
+        profilepicture.remove();
       }
+    }
 
-      localStorage.setItem("profilepicture", e.target.result);
-      const updatedimg = localStorage.getItem("profilepicture");
-      img.src = updatedimg;
-      img.classList.add("img-container");
-      profilecontainer.appendChild(img);
-      setTimeout(() => {
-        closepopup();
-      }, 1000);
-      alert("profile picture uploaded successfully");
-    };
-    reader.readAsDataURL(file);
+    const profilecontainer = document.getElementById("profilecontainerid");
+    const img = document.createElement("img");
+    img.id = "profileimgId";
+    const defaulticon = document.getElementById("defaultimg");
+
+    const fileInput = document.getElementById("fileinput");
+    const file = fileInput.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        if (defaulticon) {
+          profilecontainer.removeChild(defaulticon);
+        }
+
+        localStorage.setItem("profilepicture", e.target.result);
+        const updatedimg = localStorage.getItem("profilepicture");
+        img.src = updatedimg;
+        img.classList.add("img-container");
+        profilecontainer.appendChild(img);
+        setTimeout(() => {
+          closepopup();
+        }, 1000);
+        alert("profile picture uploaded successfully");
+      };
+      reader.readAsDataURL(file);
+    }
+  } else {
+      alert('no image has selected');
   }
 }
 
@@ -64,6 +70,6 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.getElementById('savedetails').addEventListener('click', function () {
-    alert(screen.width);
-})
+document.getElementById("savedetails").addEventListener("click", function () {
+  alert(screen.width);
+});
