@@ -1,11 +1,22 @@
 body{
     height: 100%;
     width: 100%;
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
     background: url(./images/createnewuserpgbg.jpg) no-repeat center /cover;
     overflow: hidden;
 }
+.nav-bar{
+    height: 5rem;
+    width: 100%;
+    background: linear-gradient(to right, indigo , purple );
+}
 .parentcontainer{
-    padding: 0.65rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,15 +38,14 @@ body{
 }
 .profile-picture{
     position: relative;
-    top:1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: gray;
     cursor: pointer;
-    height: 10rem;
-    width: 10rem;
+    height: 7rem;
+    width: 7rem;
     border-radius: 50%;
 }
 @media (max-width: 768px) {
@@ -46,8 +56,8 @@ body{
     }
 }
 .user-icon{
-    font-size: 2rem; 
-    opacity: 80%;  
+    font-size: 4rem; 
+    opacity: 80%; 
 }
 @media (max-width: 768px) {
     .user-icon{
@@ -58,8 +68,8 @@ body{
 .img-container{
     object-fit: cover;
     object-position: top;
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
+    width: 8rem;
     border-radius: 50%;
 }
 @media (max-width: 768px) {
@@ -263,8 +273,8 @@ i{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 50rem;
-
+    height: 20rem;
+    width: 25rem;
 }
 @media (max-width: 768px) {
     .inputs-and-button{
@@ -272,6 +282,197 @@ i{
         width: 20rem;
         justify-content: space-between;
         gap: 1rem;
-    }
-    
+    }    
+}
+.create-useracount-container{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 5rem;
+    background-color: white;
+    height: 20rem;
+    width: 45rem;
+    border-radius: 12px;
+    border: 2px solid forestgreen;
+    gap: 20px;
+}
+.account-created{
+    font-weight: bolder;
+    font-size: 1.45rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.okay-btn{
+    height: 2rem;
+    width: 6rem;
+    text-transform: capitalize;
+    font-weight: bolder;
+    color: white;
+    background-color: forestgreen;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.hamburger-icon{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 3rem;
+    width: 5rem;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+.side-bar{
+    position: fixed;
+    z-index: 1;
+    top:1rem;
+    background-color: rgb(240, 240, 166);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0.25rem;
+    align-items: center;
+    height: 25rem;
+    width: 25rem;
+    transition: 0.3s ease-in;
+}
+.sidebar-top-container{
+    position: relative;
+    top:1rem;
+    width: 23rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.close-icon{
+    text-align: center;
+    width:2rem;
+    color: white(205, 29, 29);
+    font-weight: bolder;
+    font-size: 1.85rem;
+    cursor: pointer;
+    background-color: red;
+}
+.sidebar-maincontent{
+    position: relative;
+    top:2rem;
+    padding-top:1rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 18rem;
+    width: 23rem;
+    gap:1rem;
+}
+.sidebar-links{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    top:1rem;
+    left:1rem;
+    font-weight: bold;
+    font-size: large;
+    letter-spacing: 2px;
+    display: flex;
+    height: 1.2rem;
+    width: 15rem;
+    transition: 0.4s ease;
+    text-decoration: none;
+    color: black;
+}
+.sidebar-links:hover{
+    color: blue;
+    transform: scale(1.01);
+}
+.link-line{
+    height: 10px;
+    width: 20rem;
+    background-color: black;
+    border:1px solid black;
+}
+.anchor-and-hr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width:15rem;
+    gap:1.2rem;
+}
+.profile-picture-delete-container{
+    position: absolute;
+    z-index: 1;
+    top: 10rem;
+    height: 15rem;
+    width: 35rem;
+    background-color: white;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+}
+.button-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width:10rem;
+    gap:2rem;
+}
+.ok-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    color: white;
+    font-size: 25px;
+    background-color: forestgreen;
+    cursor: pointer;
+    transition: 0.4s ease-in;
+}
+.cancel-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 3rem;
+    width: 3rem;
+    color: white;
+    font-size: 25px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s ease-in;
+}
+.ok-icon:hover{
+    transform: scale(1.10);
+    box-shadow: 2px 6px 10px rgb(11, 178, 2);
+}
+.cancel-icon:hover{
+    transform: scale(1.10);
+    box-shadow: 2px 5px 10px rgb(240, 9, 9);
+}
+.profile-delete-span{
+    font-weight: bolder;
+    font-size: larger;
+    text-transform: capitalize;
 }

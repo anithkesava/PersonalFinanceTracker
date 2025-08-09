@@ -15,6 +15,39 @@
     <script src="./newuserscript.js" defer></script>
   </head>
   <body class="newuserbody">
+    <!--top menu bar-->
+    <nav class="nav-bar">
+      <i class="fa-solid fa-bars hamburger-icon"></i>
+      <div class="side-bar">
+        <div class="sidebar-top-container">
+          <i title="close popup" class="fa-solid fa-close close-icon"></i>
+        </div>
+
+        <div class="sidebar-maincontent">
+          <div class="anchor-and-hr">
+            <a id="loginlink" href="./index.html" class="sidebar-links"
+              >Login</a
+            >
+            <hr class="link-line" />
+          </div>
+          <div class="anchor-and-hr">
+            <a id="RemovePicturelink" class="sidebar-links"
+              >Remove Profile Picture</a
+            >
+            <hr class="link-line" />
+          </div>
+          <div class="anchor-and-hr">
+            <a id="FAQlink" class="sidebar-links">FAQ</a>
+            <hr class="link-line" />
+          </div>
+          <div class="anchor-and-hr">
+            <a id="Helplink" class="sidebar-links">Help</a>
+            <hr class="link-line" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <div class="parentcontainer">
       <div class="profilepicture-upload">
         <div class="upload-picture-container">
@@ -33,6 +66,20 @@
           <button onclick="closepopup()" class="cancel-btn">Cancel</button>
         </div>
       </div>
+      <div class="create-useracount-container">
+        <span class="account-created">Account created successfully</span>
+        <button class="okay-btn">OK</button>
+      </div>
+
+      <div class="profile-picture-delete-container">
+        <span class="profile-delete-span">Do you want to remove profile picture</span>
+        <div class="button-con">
+          <i class="fa-solid fa-check ok-icon"></i>
+          <i class="fa-solid fa-close cancel-icon"></i>
+        </div>
+      </div>
+      <!--need to focus on here -->
+
       <div
         id="profilecontainerid"
         onclick="openpopup()"
@@ -41,39 +88,62 @@
         <!-- need to insert img and remove the i by using js-->
         <i id="defaultimg" class="fa-solid fa-user user-icon"></i>
       </div>
-      <div class="inputs-and-button">
+
+      <!-- to here-->
+
+      <form class="inputs-and-button">
         <div class="in-row">
           <i class="fa-solid fa-user"></i>
           <input
+            id="nameinputid"
+            required
+            title="enter only alphabets"
             type="text"
             placeholder="Enter the Username"
             autocomplete="off"
+            pattern="[A-Za-z\s]+"
           />
         </div>
         <div class="in-row">
           <i class="fa-solid fa-envelope"></i>
-          <input type="email" placeholder="Enter the email" />
+          <input
+            required
+            id="mailinput"
+            title="email should ends with @gmail.com"
+            type="email"
+            placeholder="Enter the email"
+          />
         </div>
         <div class="in-row">
           <i class="fa-solid fa-key"></i>
           <input
+            required
+            id="passwordid"
+            title="password should atleast contains 8 letter and no space "
             type="password"
             placeholder="Enter the password"
             autocomplete="off"
+            minlength="8"
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$"
           />
         </div>
         <div class="in-row">
           <i class="fa-solid fa-key"></i>
           <input
+            required
+            id="againpasswordid"
+            title="re-enter the same password as above field"
             type="password"
-            placeholder="Enter the password again"
+            placeholder="Re-Enter the password"
             autocomplete="off"
+            minlength="8"
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$"
           />
         </div>
         <div class="savebtn-container">
-          <button id="savedetails" class="savebtn">Save</button>
+          <button type="submit" id="savedetails" class="savebtn">Save</button>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>

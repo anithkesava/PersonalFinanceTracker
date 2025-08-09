@@ -26,9 +26,8 @@ input{
     background-color: #ffff;
     height: 1.85rem;
     width: 15rem;
-    font-size: large;
+    font-size: medium;
     border: 1px solid black;
-    font-family: monospace;
     border: none;
     border-radius: 4px;
     outline: 1px solid navajowhite;
