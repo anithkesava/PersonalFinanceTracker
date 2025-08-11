@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding:0;
+    background: linear-gradient(to right, darkblue, indigo);
+    overflow: hidden;
+}
+
+.header{
+    margin-left: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 5rem;
+    width:30rem;
+    color: white;
+}
+
+strong{
+    margin-left:1rem ;
+    color: orange;   
+    font-size: 2rem;
+}
+.nav-bar{
+    height: 5rem;
+    width: 100%;
+    background: linear-gradient(to right, chocolate, brown);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.rounded-icon{
+    margin-right:2rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+.profile-picture{
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+}
+.user-icon{
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+}

@@ -70,20 +70,7 @@ document.getElementById('userform').addEventListener('submit', function (e) {
     //todo: login successfully.
     //todo: need to redirect into another page 
 
-    
-    
-    const invalidpasswordcontainer = document.querySelector(
-      ".invalid-password-container"
-    );
-    const closeicon = document.querySelector(".close-icon-container");
-    closeicon.style.display = "none";
-    invalidpasswordcontainer.style.display = "flex";
-    const span = document.getElementById("dynamic-span-content");
-    if (span.textContent) {
-      span.textContent = "";
-    }
-
-    span.textContent = "Logged In Successfully";
+    location.href = "./main.html";
   }
 })
 
