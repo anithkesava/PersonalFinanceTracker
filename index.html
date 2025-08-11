@@ -5,11 +5,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="parentcontainer">
-      <form class="loginpopup" autocomplete="off">
+        <div class="invalid-password-container">
+          <div class="incorrect-pass-span-container">
+            <div class="custom-in-row">
+
+              <div class="close-icon-container">
+                <i class="fa-solid fa-close close-icon"></i>
+              </div>
+              <!-- dynamically make the span textContent-->
+
+              <span id="dynamic-span-content" class="invalidpass-span"></span>
+
+            </div>
+          </div>
+          <div class="ok-button-container">
+            <button class="okay-btn">Ok</button>
+          </div>
+        </div>
+      <form id="userform" class="loginpopup" autocomplete="off">
         <!-- insert the icon of an app-->
         <div class="img-container">
             <img class="custom-img" src="./images/favicon.png" alt="app-icon-img">
@@ -17,14 +38,14 @@
         </div>
         <div class="in-row">
           <label>Username </label>
-          <input id="username" type="text" placeholder="Enter Username" />
+          <input required id="username" type="text" placeholder="Enter Username" />
         </div>
         <div class="in-row">
           <label>Password</label>
-          <input id="password" type="password" placeholder="Enter Password" />
+          <input required id="password" type="password" placeholder="Enter Password" />
         </div>
         <div class="buttoncontainer">
-          <button disabled id="loginbtn" class="loginbtn">Login</button>
+          <button type="submit" disabled id="loginbtn" class="loginbtn">Login</button>
         </div>
         <hr>
         <div class="newuser">

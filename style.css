@@ -13,8 +13,70 @@ body{
     width: 100%;
     gap: 2rem;
 }
+.invalid-password-container{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    transform: translateX(50%);
+    z-index: 1;
+    height: 20rem;
+    width: 35rem;
+    background-color: white;
+    border-radius: 0.85rem;
+    border: 2px solid green;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.invalid-password-container.active{
+    display: flex;
+}
+
+.invalidpass-span{
+    position: relative;
+    top: 0.55rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    height: 2rem;
+    text-transform: capitalize;
+
+}
+.okay-btn{
+   height: inherit;
+   width: inherit;
+   font-weight: bolder;
+   font-size: large;
+   font-family: monospace;
+   background-color: green;
+   font-weight: bolder;
+   color: white;
+   cursor: pointer;
+   border: none;
+   border-radius: 2px;
+   transition: 0.1s ease-in;
+   text-transform: uppercase;
+}
+.okay-btn:active{
+    box-shadow: 3px 5px 10px rgba(0,0,0);
+}
+.ok-button-container{
+   height: 2rem;
+   width: 6rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center; 
+   cursor: pointer;
+   transition: transform 0.3s ease-in;
+   font-size: 2rem;
+}
+.close-button-container:hover{
+    transform: scale(1.04);
+    box-shadow: 5px 5px 5px rgba(0,0,0);
+}
 label{
-    
     font-size: large;
     height: 1.25rem;
     width:8rem;
@@ -158,4 +220,25 @@ a{
     font-size: medium;
     font-weight: bold;
     letter-spacing: 1.2px;
+}
+
+.close-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: rgb(245, 67, 67);
+    color: white;
+}
+
+.custom-in-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    height: 5rem;
+    width: 30rem;
 }
