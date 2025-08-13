@@ -3,8 +3,9 @@ body{
     padding:0;
     background: linear-gradient(to right, darkblue, indigo);
     overflow: hidden;
+    height: 98%;
+    width:100%;
 }
-
 .header{
     margin-left: 1rem;
     display: flex;
@@ -14,7 +15,6 @@ body{
     width:30rem;
     color: white;
 }
-
 strong{
     margin-left:1rem ;
     color: orange;   
@@ -24,7 +24,6 @@ strong{
     height: 5rem;
     width: 100%;
     background: linear-gradient(to right, chocolate, brown);
-
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -34,6 +33,7 @@ strong{
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
+    border:none;
 }
 .profile-picture{
     height: inherit;
@@ -42,9 +42,317 @@ strong{
     object-fit: cover;
     object-position: top;
     cursor: pointer;
+    border:none;
 }
 .user-icon{
     height: inherit;
     width: inherit;
     border-radius: inherit;
+}
+.side-bar {
+    position: absolute;
+    z-index: 1;
+    top: 4rem;
+    right: 0.25rem;
+    height: 30rem;
+    width: 25rem;
+    background-color: lightgoldenrodyellow;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-20px); 
+    pointer-events: none;
+    transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+}
+.side-bar.active {
+    opacity: 1;
+    transform: translateY(0); 
+    pointer-events: auto;
+}
+.disappear{
+    opacity: 0;
+    transform: translateY(-20px); 
+    pointer-events: none;
+}
+.side-bar-container{
+    padding-top:1rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bolder;
+    font-size: large;
+    height: 28rem;
+    width:24rem; 
+}
+.side-bar-link{
+    padding-top:1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+    height: 2rem;
+    width:23rem;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+}
+.side-bar-link:hover{
+transform: scale(1.01);
+color: blue;
+}
+.side-bar-icon{
+    text-align: center;
+    height: 2rem;
+    width:2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.custom-span-links{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    cursor: pointer;
+    transition: 0.4s ease-in;
+}
+.add-expense-income{
+    position: relative;
+    padding: 0.75rem;
+    bottom: 2rem;
+    height: 35rem;
+    width:50rem;
+    justify-self: center;
+    background: linear-gradient(to right, indigo, purple);
+    border-radius: 1.58rem;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+::-webkit-scrollbar{
+    width:0px;
+}
+.user-details-header{
+    height: 2rem;
+    width:20rem;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 4px 10px rgba(0,0,0);
+}
+.user-general-details-container{
+    border:none;
+}
+.user-input-fields{
+    height: 40rem;
+    width: 50rem;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+}
+.label-with-input{
+    position: relative;
+    height: 2.75rem;
+    width:48rem;
+    justify-self: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.label-with-input-single{
+    position: relative;
+    top:1rem;
+    height: 4rem;
+    width:40rem;
+    justify-self: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+}
+.label-input-combo{
+    height: 2.25rem;
+    width:23rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+}
+label{
+    position: relative;
+    top:0.25rem;
+    height: 2rem;
+    width:7rem;
+    font-weight: bold;
+    font-size: small;
+    text-transform: capitalize;
+    color: white;
+    font-family: sans-serif;
+}
+input{
+    padding-left:0.45rem;
+    height: 1.75rem;
+    width: 12rem;
+    border: 1px solid grey;
+    outline: 1px solid grey;
+}
+.label-input-single{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:2rem;
+}
+.custom-label{
+    font-size: small;
+    text-align: center;
+    height: 2.25rem;
+    width: 20rem;
+}
+select{
+    height: 1.75rem;
+    width: 12rem;
+    border: 1px solid grey;
+    outline: 1px solid grey;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+option{
+    text-transform: uppercase;
+    color: black;    
+}
+.pointer{
+    cursor: pointer;
+}
+input:read-only{
+    cursor:not-allowed;
+    opacity: 0.75;
+}
+.employee-is-a-primary-source{
+    position: relative;
+    top:1rem;
+    height: 22rem;
+    width:48rem;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:1rem;
+}
+.business-is-a-primary-source{
+    position: relative;
+    top:1rem;
+    padding-top:1rem;
+    height: 22rem;
+    width:48rem;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+    overflow: scroll;
+}
+.freelance-is-a-primary-source{
+    position: relative;
+    top:1rem;
+    padding-top:1rem;
+    height: 22rem;
+    width:48rem;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+    overflow: scroll;
+}
+.employee-info-block{
+    position: relative;
+    top:1rem;
+    height:3rem;
+    width: inherit;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.employee-label-with-input{
+    width: 28rem;
+    height: 2rem;
+    display: flex;
+    padding-left:1rem;
+    justify-content: flex-start;
+    align-items: center;
+    gap:2rem;
+}
+.employee-label{
+    position: relative;
+    font-size: medium;
+    width:8rem;
+    height: 1rem;
+    padding-bottom: 0.67rem;
+}
+.business-with-input-label-combo{
+    position: relative;
+    height: 3rem;
+    width:46rem;
+    gap:1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.business-userinputs{
+    height: 2rem;
+    width: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:1rem;
+}
+.business-label{
+    position: relative;
+    padding-bottom: 0.56rem;
+    font-size: small;
+    height: 1.25rem;
+    width:12rem;
+}
+.save-btn-container{
+    position: relative;
+    top:1rem;
+    height: 4rem;
+    width:48rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.savebtn{
+    height: 2rem;
+    width: 6rem;
+    color: white;
+    font-weight: bolder;
+    font-size: large;
+    background-color: chocolate;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.freelance-label-input-combo{
+    height: 3rem;
+    width:46rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.freelance-userinputs{
+    height: 2rem;
+    width:22rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.freelance-label{
+    font-size: small;
+    height: 1.75rem;
+    width: 9rem;
 }
