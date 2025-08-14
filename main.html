@@ -23,15 +23,23 @@
       </div>
       <div class="side-bar">
         <div class="side-bar-container">
+          <div id="view-profile-id" class="side-bar-link">
+            <div class="side-bar-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <span class="custom-span-links">My Profile</span>
+          </div>
           <div id="add-user-id" class="side-bar-link">
             <div class="side-bar-icon">
               <i class="fa-solid fa-sack-dollar"></i>
             </div>
-            <span class="custom-span-links">Add Income and Expense Details</span>
+            <span class="custom-span-links"
+              >Add Personal and Income Details</span
+            >
           </div>
           <div id="signout-id" class="side-bar-link">
             <div class="side-bar-icon">
-              <i class="fa-solid fa-sign-out"></i>
+              <i class="fa-solid fa-power-off"></i>
             </div>
             <span class="custom-span-links">Sign out</span>
           </div>
@@ -48,27 +56,32 @@
           <div class="label-with-input">
             <!-- need to have two user inputs in one line i.e., label with input -->
             <div class="label-input-combo">
-              <label>name</label>
+              <label>name <span class="str">*</span></label>
               <input readonly id="username" type="text" />
             </div>
             <div class="label-input-combo">
-              <label>email</label>
+              <label>email <span class="str">*</span></label>
               <input readonly id="useremail" type="email" />
             </div>
           </div>
           <div class="label-with-input">
             <div class="label-input-combo">
-              <label>phone no</label>
-              <input id="phone" required type="text" placeholder="Enter phone number" />
+              <label>phone no <span class="str">*</span></label>
+              <input
+                id="phone"
+                required
+                type="number"
+                placeholder="Enter phone number"
+              />
             </div>
             <div class="label-input-combo">
-              <label>DOB</label>
+              <label>DOB <span class="str">*</span></label>
               <input required id="dob" type="date" />
             </div>
           </div>
           <div class="label-with-input">
             <div class="label-input-combo">
-              <label>Primary Source of Income</label>
+              <label>Primary Source of Income <span class="str">*</span></label>
               <select id="select" required>
                 <!-- u know where this gonna happened-->
               </select>
@@ -80,28 +93,52 @@
           <!-- this container only will visible when the user selects the 'Employee' as a primary source of income-->
           <div class="employee-info-block">
             <div class="employee-label-with-input">
-              <label class="employee-label">Company Name</label>
-              <input type="text" placeholder="Enter the Current Company name" />
+              <label class="employee-label"
+                >Company Name <span class="str">*</span></label
+              >
+              <input
+                id="companyname"
+                class="employee-input"
+                type="text"
+                placeholder="Enter the Current Company name"
+              />
             </div>
 
             <div class="employee-label-with-input">
-              <label class="employee-label">Job Designation</label>
-              <input type="text" placeholder="Enter the Job Title" />
+              <label class="employee-label"
+                >Job Designation <span class="str">*</span></label
+              >
+              <input
+                id="designation"
+                class="employee-input"
+                type="text"
+                placeholder="Enter the Job Title"
+              />
             </div>
           </div>
 
           <div class="employee-info-block">
             <div class="employee-label-with-input">
-              <label class="employee-label">Current CTC</label>
+              <label class="employee-label"
+                >Current CTC <span class="str">*</span></label
+              >
               <input
+                class="employee-input"
                 id="ctc"
-                type="text"
+                type="number"
                 placeholder="Enter the CTC i.e, 442502"
               />
             </div>
             <div class="employee-label-with-input">
-              <label class="employee-label">Monthly-In-hand</label>
-              <input type="text" placeholder="Enter the Monthly Salary" />
+              <label class="employee-label"
+                >Monthly-In-hand <span class="str">*</span></label
+              >
+              <input
+                id="montlysalary"
+                class="employee-input"
+                type="number"
+                placeholder="Enter the Monthly Salary"
+              />
             </div>
           </div>
 
@@ -110,7 +147,7 @@
               <label class="employee-label">Bonus(if any)</label>
               <input
                 id="bonus"
-                type="text"
+                type="number"
                 placeholder="Enter the Monthly Bonus"
               />
             </div>
@@ -121,12 +158,21 @@
           <!--this container will only be visible when the user select the business as primary source of income -->
           <div class="business-with-input-label-combo">
             <div class="business-userinputs">
-              <label class="business-label">Business Name</label>
-              <input type="text" placeholder="Enter Business name" />
+              <label class="business-label"
+                >Business Name <span class="str">*</span></label
+              >
+              <input
+                id="businessname"
+                class="business-input"
+                type="text"
+                placeholder="Enter Business name"
+              />
             </div>
             <div class="business-userinputs">
-              <label class="business-label">Business Type</label>
-              <select id="business-type">
+              <label class="business-label"
+                >Business Type <span class="str">*</span></label
+              >
+              <select class="business-input" id="business-type">
                 <!-- handled by js-->
               </select>
             </div>
@@ -134,33 +180,60 @@
 
           <div class="business-with-input-label-combo">
             <div class="business-userinputs">
-              <label class="business-label">Industry</label>
+              <label class="business-label"
+                >Industry <span class="str">*</span></label
+              >
               <input
+                id="industry"
+                class="business-input"
                 type="text"
                 placeholder="Enter Industry name i.e., IT, Retails"
               />
             </div>
             <div class="business-userinputs">
-              <label class="business-label">Years Of Operation</label>
-              <input type="number" placeholder="Enter the number of Years" />
+              <label class="business-label"
+                >Years Of Operation <span class="str">*</span></label
+              >
+              <input
+                id="years"
+                class="business-input"
+                type="number"
+                placeholder="Enter the number of Years"
+              />
             </div>
           </div>
 
           <div class="business-with-input-label-combo">
             <div class="business-userinputs">
-              <label class="business-label">No of Employees</label>
-              <input type="text" placeholder="Enter Employee Count" />
+              <label class="business-label"
+                >No of Employees <span class="str">*</span></label
+              >
+              <input
+                id="employeecount"
+                class="business-input"
+                type="text"
+                placeholder="Enter Employee Count"
+              />
             </div>
             <div class="business-userinputs">
-              <label class="business-label">Average Monthly Income</label>
-              <input type="text" placeholder="Enter Average Monthly Income" />
+              <label class="business-label"
+                >Average Monthly Income <span class="str">*</span></label
+              >
+              <input
+                id="business-monthly-income"
+                class="business-input"
+                type="text"
+                placeholder="Enter Average Monthly Income"
+              />
             </div>
           </div>
 
           <div class="business-with-input-label-combo">
             <div class="business-userinputs">
-              <label class="business-label">Primary Market</label>
-              <select id="primary-market">
+              <label class="business-label"
+                >Primary Market <span class="str">*</span></label
+              >
+              <select class="business-input" id="primary-market">
                 <!--please reach out js makeprimarymarketdropdown()-->
               </select>
             </div>
@@ -171,13 +244,24 @@
           <!-- this container will only be visible when the user selects the freelance as a primary source of income-->
           <div class="freelance-label-input-combo">
             <div class="freelance-userinputs">
-              <label class="freelance-label">Freelance Service</label>
-              <input type="text" placeholder="Enter Freelance Service" />
+              <label class="freelance-label"
+                >Freelance Service <span class="str">*</span></label
+              >
+              <input
+                id="freelanceservice"
+                class="freelance-input"
+                type="text"
+                placeholder="Enter Freelance Service"
+              />
             </div>
 
             <div class="freelance-userinputs">
-              <label class="freelance-label">Years of Experience</label>
+              <label class="freelance-label"
+                >Years of Experience <span class="str">*</span></label
+              >
               <input
+                id="freelanceexperience"
+                class="freelance-input"
                 type="number"
                 placeholder="Enter the years of experience"
               />
@@ -185,13 +269,24 @@
           </div>
           <div class="freelance-label-input-combo">
             <div class="freelance-userinputs">
-              <label class="freelance-label">Average Monthly Salary</label>
-              <input type="text" placeholder="Enter Average Montly Salary" />
+              <label class="freelance-label"
+                >Average Monthly Salary <span class="str">*</span></label
+              >
+              <input
+                id="freelancemontlysalary"
+                class="freelance-input"
+                type="text"
+                placeholder="Enter Average Montly Salary"
+              />
             </div>
 
             <div class="freelance-userinputs">
-              <label class="freelance-label">Top Clients 1</label>
+              <label class="freelance-label"
+                >Top Clients 1 <span class="str">*</span></label
+              >
               <input
+                id="clientname"
+                class="freelance-input"
                 type="text"
                 placeholder="Enter a Client or Company name"
               />
@@ -199,15 +294,24 @@
           </div>
           <div class="freelance-label-input-combo">
             <div class="freelance-userinputs">
-              <label class="freelance-label">Prefered Payment Method</label>
-              <select id="payment-method">
+              <label class="freelance-label"
+                >Prefered Payment Method <span class="str">*</span></label
+              >
+              <select class="freelance-input" id="payment-method">
                 <!-- look js code makepaymentmethoddropdown()-->
               </select>
             </div>
 
             <div class="freelance-userinputs">
-              <label class="freelance-label">Working Platform</label>
-              <input type="text" placeholder="Enter a Working Platform" />
+              <label class="freelance-label"
+                >Working Platform <span class="str">*</span></label
+              >
+              <input
+                id="working-plaftform"
+                class="freelance-input"
+                type="text"
+                placeholder="Enter a Working Platform"
+              />
             </div>
           </div>
         </div>
@@ -216,7 +320,6 @@
         <div class="save-btn-container">
           <button type="submit" class="savebtn">Save</button>
         </div>
-
       </div>
     </form>
   </body>

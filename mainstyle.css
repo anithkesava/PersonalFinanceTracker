@@ -115,6 +115,10 @@ color: blue;
     cursor: pointer;
     transition: 0.4s ease-in;
 }
+.str{
+    color: red;
+    font-size: medium;
+}
 .add-expense-income{
     position: relative;
     padding: 0.75rem;
@@ -122,9 +126,9 @@ color: blue;
     height: 35rem;
     width:50rem;
     justify-self: center;
-    background: linear-gradient(to right, indigo, purple);
+    background-color: gray;
     border-radius: 1.58rem;
-    display: none;
+    display: none; /*needs to change*/
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -137,8 +141,7 @@ color: blue;
     height: 2rem;
     width:20rem;
     text-align: center;
-    color: white;
-    text-shadow: 3px 4px 10px rgba(0,0,0);
+    color: black;
 }
 .user-general-details-container{
     border:none;
@@ -189,10 +192,31 @@ label{
     font-weight: bold;
     font-size: small;
     text-transform: capitalize;
-    color: white;
+    color: black;
     font-family: sans-serif;
 }
 input{
+    padding-left:0.45rem;
+    height: 1.75rem;
+    width: 12rem;
+    border: 1px solid grey;
+    outline: 1px solid grey;
+}
+.employee-input{
+    padding-left:0.45rem;
+    height: 1.75rem;
+    width: 12rem;
+    border: 1px solid grey;
+    outline: 1px solid grey;
+}
+.business-input{
+    padding-left:0.45rem;
+    height: 1.75rem;
+    width: 12rem;
+    border: 1px solid grey;
+    outline: 1px solid grey;
+}
+.freelance-input{
     padding-left:0.45rem;
     height: 1.75rem;
     width: 12rem;
@@ -289,8 +313,9 @@ input:read-only{
 .employee-label{
     position: relative;
     font-size: medium;
-    width:8rem;
+    width:9rem;
     height: 1rem;
+    color: black;
     padding-bottom: 0.67rem;
 }
 .business-with-input-label-combo{
@@ -336,6 +361,7 @@ input:read-only{
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    text-transform: capitalize;
 }
 .freelance-label-input-combo{
     height: 3rem;
