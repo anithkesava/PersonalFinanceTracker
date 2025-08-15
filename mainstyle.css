@@ -35,6 +35,91 @@ strong{
     border-radius: 50%;
     border:none;
 }
+.title-and-category{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 1rem;
+    height: 3rem;
+    width: 10rem;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    gap:0.24rem;
+}
+.income-related-information{
+    position: relative;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4rem;
+    width:60rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inside-income-info-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 9rem;
+    transition: transform 0.2s ease-in;
+    cursor:default;
+    background:linear-gradient(to bottom, #e0057e , chocolate );
+    border-radius: 8px;
+}
+.inside-income-info-box:hover{
+    transform: scale(1.06) translateY(-10px);
+
+}
+.current-month-span{
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+}
+.main-page-content-name{
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+.add-expense-button-container{
+    position: relative;
+    margin-left:1rem;
+    top:5rem;
+    height: 5rem;
+    width:20rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    justify-content: center;
+}
+.add-expense-button{
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, gray, darkgray);
+    font-weight: bold;
+    font-size: large;
+    color: white;
+    border: none;
+    height: 2rem;
+    width:14rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in, border-radius 0.2s ease-in, background-color 0.2s ease-in, color 0.2s ease-in;
+}
+.add-expense-button:hover{
+    background: linear-gradient(to bottom, darkgray, gray);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 5px rgba(0,0,0);
+}
+.add-expense-button:active{
+    transform: translateY(0) scale(0.94);
+    box-shadow: 5px 10px 10px rgba(0,0,0);
+    border-radius: 10px;
+
+}
 .profile-picture{
     height: inherit;
     width: inherit;
@@ -120,9 +205,9 @@ color: blue;
     font-size: medium;
 }
 .add-expense-income{
-    position: relative;
+    position: absolute;
     padding: 0.75rem;
-    bottom: 2rem;
+    bottom: 4rem;
     height: 35rem;
     width:50rem;
     justify-self: center;

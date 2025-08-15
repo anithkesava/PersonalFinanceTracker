@@ -7,7 +7,42 @@ window.addEventListener("DOMContentLoaded", function () {
   strong.textContent = username;
   header.appendChild(h1);
   header.appendChild(strong);
-  // const profile = document.getElementById("profile-picture");
+
+  function getCurrentMonthName() {
+    const today = new Date();
+    const month = today.toDateString().split(" ");
+    const monthname = month[1];
+    const year = month[3];
+    const currentMonth = monthname + "-" + year;
+    const monthSpan = document.getElementById("getCurrentMonth");
+    monthSpan.textContent = currentMonth;
+    monthSpan.classList.add("current-month-span");
+  }
+  getCurrentMonthName();
+  function getCurrentMonthIncome() {
+    const primaryincomedetails = localStorage.getItem(
+      "primarysource-information"
+    );
+    console.log(primaryincomedetails);
+    const currentMonthIncome = JSON.parse(primaryincomedetails);
+    console.log("the cuurent month salary: " + currentMonthIncome.montlysalary);
+    if (currentMonthIncome.montlysalary !== null) {
+      const income = document.getElementById("getIncome");
+      income.textContent = currentMonthIncome.montlysalary;
+      income.classList.add("current-month-span");
+    }
+  }
+  getCurrentMonthIncome();
+  const title = this.document.getElementById("titleId");
+  const category = this.document.getElementById("categoryId");
+
+  const userprimarydetails = JSON.parse(
+    localStorage.getItem("primarysource-information")
+  );
+  if (userprimarydetails !== null) {
+    title.textContent = userprimarydetails.title;
+    category.textContent = userprimarydetails.category;
+  }
   const profilepicture = localStorage.getItem("profilepicture");
   if (!profilepicture) {
     const imgcontainer = document.querySelector(".defaulticon");
@@ -139,6 +174,10 @@ window.addEventListener("DOMContentLoaded", function () {
   if (typeof userinfo === "string") {
     //we need to retrieve the value and assign that to respective input fields.
     const user = JSON.parse(userinfo);
+    const ids = ["phone", "dob"];
+    ids.forEach((id) => {
+      this.document.getElementById(id).readOnly = true;
+    });
     document.getElementById("phone").value = user.mobile;
     document.getElementById("dob").value = user.dateofbirth;
     const primarysource = this.localStorage.getItem("primarysource");
@@ -165,10 +204,22 @@ window.addEventListener("DOMContentLoaded", function () {
 
     const employee = localStorage.getItem("primarysource-information");
     const employeedetails = JSON.parse(employee);
-    document.getElementById("companyname").value = employeedetails.companyname;
-    document.getElementById("designation").value = employeedetails.role;
+
+    const inputIds = [
+      "companyname",
+      "designation",
+      "ctc",
+      "montlysalary",
+      "bonus",
+    ];
+    inputIds.forEach((id) => {
+      document.getElementById(id).readOnly = true;
+    });
+    document.getElementById("companyname").value = employeedetails.title;
+    document.getElementById("designation").value = employeedetails.category;
     document.getElementById("ctc").value = employeedetails.ctc;
-    document.getElementById("montlysalary").value = employeedetails.salary;
+    document.getElementById("montlysalary").value =
+      employeedetails.montlysalary;
     document.getElementById("bonus").value = employeedetails.montlybonus;
   } else if (primarysource === "business") {
     employeecontainer.style.display = "none";
@@ -177,11 +228,22 @@ window.addEventListener("DOMContentLoaded", function () {
 
     const business = this.localStorage.getItem("primarysource-information");
     const businessdetails = JSON.parse(business);
-    document.getElementById("businessname").value =
-      businessdetails.businessname;
+
+    const ids = [
+      "businessname",
+      "business-type",
+      "industry",
+      "years",
+      "employeecount",
+      "business-monthly-income",
+      "primary-market",
+    ];
+    ids.forEach((id) => {
+      this.document.getElementById(id).readOnly = true;
+    });
+    document.getElementById("businessname").value = businessdetails.title;
     if (businessdetails.businesstype != null) {
-      document.getElementById("business-type").value =
-        businessdetails.businesstype;
+      document.getElementById("business-type").value = businessdetails.category;
       document.getElementById("business-type").disabled = true;
       document.getElementById("business-type").style.cursor = "not-allowed";
     }
@@ -205,8 +267,19 @@ window.addEventListener("DOMContentLoaded", function () {
     const freelancedetails = localStorage.getItem("primarysource-information");
     const freelance = JSON.parse(freelancedetails);
 
-    document.getElementById("freelanceservice").value =
-      freelance.freelanceservice;
+    const Ids = [
+      "freelanceservice",
+      "freelanceexperience",
+      "freelancemontlysalary",
+      "clientname",
+      "payment-method",
+      "working-plaftform",
+    ];
+    Ids.forEach((id) => {
+      this.document.getElementById(id).readOnly = true;
+    });
+
+    document.getElementById("freelanceservice").value = freelance.title;
     document.getElementById("freelanceexperience").value =
       freelance.freelanceexperience;
     document.getElementById("freelancemontlysalary").value =
@@ -217,7 +290,7 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("payment-method").disabled = true;
       document.getElementById("payment-method").style.cursor = "not-allowed";
     }
-    document.getElementById("working-plaftform").value = freelance.platform;
+    document.getElementById("working-plaftform").value = freelance.category;
   }
 });
 
@@ -314,8 +387,6 @@ document
 
     const username = document.getElementById("username").value;
     const useremail = document.getElementById("useremail").value;
-    console.log(username);
-    console.log(useremail);
     const phone = document.getElementById("phone").value;
     const dob = document.getElementById("dob").value;
 
@@ -337,10 +408,10 @@ document
       const bonus = document.getElementById("bonus").value;
 
       let incomesourcedata = {
-        companyname: cname,
-        role: designation,
+        title: cname,
+        category: designation,
         ctc: ctc,
-        salary: montlysalary,
+        montlysalary: montlysalary,
         montlybonus: bonus == "" ? 0 : bonus,
       };
       //make sure whether the primary of income is also selected.
@@ -372,8 +443,8 @@ document
       const market = document.getElementById("primary-market").value;
 
       let incomesourcedata = {
-        businessname: bname,
-        businesstype: btype,
+        title: bname,
+        category: btype,
         industryname: industry,
         yearsofoperation: years,
         employeecount: ecount,
@@ -408,12 +479,12 @@ document
         document.getElementById("working-plaftform").value;
 
       let incomesourcedata = {
-        freelanceservice: service,
+        title: service,
         freelanceexperience: experience,
         montlysalary: salary,
         freelanceclient: client,
         paymentmethod: paymentmode,
-        platform: workingplatform,
+        category: workingplatform,
       };
       const primaryincomedetails = localStorage.getItem(
         "primarysource-information"
@@ -436,3 +507,8 @@ document
     } else {
     }
   });
+
+//add-expense-button
+document.querySelector('.add-expense-button').addEventListener('click', function () {
+  location.href = "./addexpense.html";
+});

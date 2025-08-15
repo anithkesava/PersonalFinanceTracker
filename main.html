@@ -13,6 +13,10 @@
   </head>
   <body id="body">
     <div class="nav-bar">
+      <div class="title-and-category">
+        <span id="titleId"></span>
+        <span id="categoryId"></span>
+      </div>
       <div class="rounded-icon">
         <img
           id="profile-picture"
@@ -48,6 +52,27 @@
     </div>
     <div id="header" class="header">
       <!-- coded by using js-->
+    </div>
+    <div class="income-related-information">
+      <div class="inside-income-info-box">
+        <span class="main-page-content-name">Current Month</span>
+        <span id="getCurrentMonth"></span>
+      </div>
+      <div class="inside-income-info-box">
+        <span class="main-page-content-name">Income</span>
+        <span id="getIncome">Nil</span>
+      </div>
+      <div class="inside-income-info-box">
+        <span class="main-page-content-name">Expenses</span>
+        <span id="getExpense">Nil</span>
+      </div>
+      <div class="inside-income-info-box">
+        <span class="main-page-content-name">Balance</span>
+        <span id="getBalance">Nil</span>
+      </div>
+    </div>
+    <div class="add-expense-button-container">
+      <button class="add-expense-button">add expense</button>
     </div>
     <form id="userinformation" autocomplete="off" class="add-expense-income">
       <h1 class="user-details-header">User Information</h1>

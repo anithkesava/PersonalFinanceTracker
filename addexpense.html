@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="./addexpensestyle.css" />
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <script src="./addexpensescript.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="menu-bar">
+      <div class="menu-bar-content">
+        <h1>Add Expense</h1>
+      </div>
+    </nav>
+    <form autocomplete="off" class="add-expense-fields-container">
+      <div class="contents-in-a-row">
+        <div class="add-expense-fields">
+          <label>Date</label>
+          <input type="date" id="date" />
+        </div>
+
+        <div class="add-expense-fields">
+          <label>Description</label>
+          <input type="text" id="description" placeholder="Enter Description" />
+        </div>
+
+        <div class="add-expense-fields">
+          <label>Category</label>
+          <select id="category"></select>
+        </div>
+
+        <div class="add-expense-fields">
+          <label>Price</label>
+          <input id="price" placeholder="Enter Price" />
+        </div>
+      </div>
+
+      <div class="contents-in-a-row">
+        <div class="add-expense-fields">
+          <label>Payment Mode</label>
+          <select id="payment-mode"></select>
+        </div>
+
+        <div class="add-expense-fields">
+          <label>Location</label>
+          <input id="location" placeholder="Enter the location" />
+        </div>
+      </div>
+
+      <div class="add-expense-btn-container">
+        <button type="submit" class="add-expense-btn" id="addExpenseBtn">Add Expense</button>
+      </div>
+
+    </form>
+  </body>
+</html>
