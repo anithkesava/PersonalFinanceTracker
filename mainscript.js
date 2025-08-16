@@ -23,9 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const primaryincomedetails = localStorage.getItem(
       "primarysource-information"
     );
-    console.log(primaryincomedetails);
     const currentMonthIncome = JSON.parse(primaryincomedetails);
-    console.log("the cuurent month salary: " + currentMonthIncome.montlysalary);
     if (currentMonthIncome.montlysalary !== null) {
       const income = document.getElementById("getIncome");
       income.textContent = currentMonthIncome.montlysalary;
@@ -33,6 +31,33 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
   getCurrentMonthIncome();
+
+  function getFewTransactionTableData() {
+    const table = this.document.getElementById("few-transaction-history-table");
+    const expenses = JSON.parse(localStorage.getItem("overallexpense"));
+    if (expenses !== null) {
+      //for table columns.
+      Object.keys(expenses[0]).forEach((key) => {
+        const th = document.createElement("th");
+        th.textContent = key;
+        table.appendChild(th);
+      });
+
+      //for table rows.
+      for (let i = 0; i < expenses.length; i++) {
+        const tr = document.createElement("tr");
+        Object.values(expenses[i]).forEach((value) => {
+          const td = document.createElement("td");
+          td.textContent = value;
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      }
+    } else {
+      alert("no transaction found");
+    }
+  }
+  getFewTransactionTableData();
   const title = this.document.getElementById("titleId");
   const category = this.document.getElementById("categoryId");
 
@@ -509,6 +534,13 @@ document
   });
 
 //add-expense-button
-document.querySelector('.add-expense-button').addEventListener('click', function () {
-  location.href = "./addexpense.html";
-});
+document
+  .querySelector(".add-expense-button")
+  .addEventListener("click", function () {
+    location.href = "./addexpense.html";
+  });
+
+//transaction history button
+document.querySelector('.transaction-history-button').addEventListener('click', function () {
+  location.href = "./transactionhistory.html";
+  })

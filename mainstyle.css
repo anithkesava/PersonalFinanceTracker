@@ -28,7 +28,7 @@ body::before{
 }
 strong{
     margin-left:1rem ;
-    color: darkorange;   
+    color: rgb(255, 108, 64);   
     font-size: 2rem;
 }
 .nav-bar{
@@ -108,7 +108,6 @@ strong{
     border-radius: 4px;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid brown;
 }
 .add-expense-button{
     text-transform: uppercase;
@@ -233,13 +232,68 @@ color: blue;
     align-items: center;
 }
 .view-transaction-history-container{
-    border:2px solid black;
     height: 18rem;
     width: 90rem;
     justify-self: center;
     position: relative;
     top: 5rem;
-    background-color: white;
+    background: rgba(255, 255,255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+    border-radius: 0.54rem;
+}
+
+th{
+    border:1px solid black;
+    height: 2rem;
+    width:20rem;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgb(252, 93, 120), rgb(255, 129, 255));
+}
+td{
+    border:1px solid black;
+    height: 2rem;
+    width:20rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: antiquewhite;
+}
+.table-container{
+    position: relative;
+    top:1rem;
+    height: 10rem;
+    width: 85rem;
+    overflow: hidden;
+}
+.view-more-btn{
+    cursor: pointer;
+    height: 2rem;
+    width: 8rem;
+    background: linear-gradient(to right, chocolate, brown);
+    border: none;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    transition: transform 0.2s ease-in;
+}
+.view-more-btn:hover{
+    transform: translateY(-5px);
+}
+.view-more-btn:active{
+    transform: translateY(0) scale(0.98);
+}
+.view-more-transaction-button-container{
+    position: relative;
+    top:2rem;
+    height: 3rem;
+    width:10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .transaction-history-button{    
     text-transform: uppercase;
