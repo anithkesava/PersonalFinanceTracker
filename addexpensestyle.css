@@ -17,18 +17,80 @@ html,body{
     height: 5rem;
     width: 100%;
     background: linear-gradient(to bottom, darkorange, chocolate );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.menu-bar-content{
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    justify-self: center;
+.menu-bar-content{   
     height: 4rem;
     width:30rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+.side-bar{
+    position: absolute;
+    top: 4rem;
+    left:0.25rem;
+    z-index: 1;
+    background-color: rgb(250, 201, 79);
+    height: 30rem;
+    width: 20rem;
+
+    display: none; /*none*/
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.single-sidebar-content{
+    border: 2px solid darkorange;
+    height: 4rem;
+    width:inherit;
+}
+.side-bar-content{
+    position: relative;
+    top: 1rem;
+    left:1rem;
+    height: 2rem;
+    width: 15rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in, text-decoration 0.2s ease-in;
+}
+.side-bar-content:hover{
+    color: blue;
+    text-decoration: underline;
+}
+.side-bar-content:active{
+    transform: translateY(0) scale(0.98);
+}
+
+.sidebar-span{
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 0.14rem;
+}
+.hamburger-icon-container{
+    position: absolute;
+    left:0rem;
+    height: 3rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.hamburger-icon{
+    color: white;
+    font-size: 1.9rem;
+    font-weight: bolder;
 }
 h1{
     position: relative;
@@ -41,13 +103,14 @@ h1{
 }
 .add-expense-fields-container{
     height: 30rem;
-    width: 80%;
+    width: 80rem;
     background-color: rgba(22, 19, 19, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
+    overflow: hidden;
 }
 .add-expense-fields{
     padding-left: 1.50rem;

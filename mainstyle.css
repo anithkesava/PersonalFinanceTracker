@@ -1,10 +1,21 @@
-body{
+html,body{
+    position: relative;
     margin: 0;
     padding:0;
-    background: linear-gradient(to right, darkblue, indigo);
     overflow: hidden;
-    height: 98%;
-    width:100%;
+    height: 100vh;
+    width:100vw;
+}
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./images/dashboardpagebg.jpg) no-repeat center / cover;
+    opacity: 0.6;
+    z-index: -1; 
 }
 .header{
     margin-left: 1rem;
@@ -13,11 +24,11 @@ body{
     align-items: center;
     height: 5rem;
     width:30rem;
-    color: white;
+    color: black;
 }
 strong{
     margin-left:1rem ;
-    color: orange;   
+    color: darkorange;   
     font-size: 2rem;
 }
 .nav-bar{
@@ -85,25 +96,28 @@ strong{
     font-weight: bold;
     font-size: large;
 }
-.add-expense-button-container{
+.expense-and-transaction-button-container{
     position: relative;
+    padding:1rem;
     margin-left:1rem;
-    top:5rem;
+    top:3rem;
     height: 5rem;
-    width:20rem;
+    width:90rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 4px;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid brown;
 }
 .add-expense-button{
     text-transform: uppercase;
     background: linear-gradient(to bottom, gray, darkgray);
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
     color: white;
     border: none;
-    height: 2rem;
+    height: 3.5rem;
     width:14rem;
     cursor: pointer;
     transition: transform 0.2s ease-in, border-radius 0.2s ease-in, background-color 0.2s ease-in, color 0.2s ease-in;
@@ -211,14 +225,45 @@ color: blue;
     height: 35rem;
     width:50rem;
     justify-self: center;
-    background-color: gray;
+    background: url(./images/userprofilebg.png) top /cover;
     border-radius: 1.58rem;
     display: none; /*needs to change*/
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
-
+.view-transaction-history-container{
+    border:2px solid black;
+    height: 18rem;
+    width: 90rem;
+    justify-self: center;
+    position: relative;
+    top: 5rem;
+    background-color: white;
+}
+.transaction-history-button{    
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, gray, darkgray);
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    border: none;
+    height: 3.5rem;
+    width:14rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in, border-radius 0.2s ease-in, background-color 0.2s ease-in, color 0.2s ease-in;
+}
+.transaction-history-button:hover{
+    background: linear-gradient(to bottom, darkgray, gray);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 5px rgba(0,0,0);
+}
+.transaction-history-button:active{
+    transform: translateY(0) scale(0.94);
+    box-shadow: 5px 10px 10px rgba(0,0,0);
+    border-radius: 10px;
+}
 ::-webkit-scrollbar{
     width:0px;
 }
@@ -226,7 +271,7 @@ color: blue;
     height: 2rem;
     width:20rem;
     text-align: center;
-    color: black;
+    color: white;
 }
 .user-general-details-container{
     border:none;
@@ -277,7 +322,7 @@ label{
     font-weight: bold;
     font-size: small;
     text-transform: capitalize;
-    color: black;
+    color: white;
     font-family: sans-serif;
 }
 input{
@@ -400,7 +445,7 @@ input:read-only{
     font-size: medium;
     width:9rem;
     height: 1rem;
-    color: black;
+    color: white;
     padding-bottom: 0.67rem;
 }
 .business-with-input-label-combo{

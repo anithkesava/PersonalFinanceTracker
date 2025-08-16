@@ -13,49 +13,69 @@
   </head>
   <body>
     <nav class="menu-bar">
+      <div class="hamburger-icon-container">
+        <i class="fas fa-bars hamburger-icon"></i>
+      </div>
+
       <div class="menu-bar-content">
         <h1>Add Expense</h1>
       </div>
     </nav>
-    <form autocomplete="off" class="add-expense-fields-container">
+    <div class="side-bar">
+      <div id="dashboardpage" class="side-bar-content">
+        <i class="fas fa-tachometer-alt"></i>
+        <span class="sidebar-span">Dashboard</span>
+      </div>
+    </div>
+    <form
+      id="addexpenseForm"
+      autocomplete="off"
+      class="add-expense-fields-container"
+    >
       <div class="contents-in-a-row">
         <div class="add-expense-fields">
           <label>Date</label>
-          <input type="date" id="date" />
+          <input required type="date" id="date" />
         </div>
 
         <div class="add-expense-fields">
           <label>Description</label>
-          <input type="text" id="description" placeholder="Enter Description" />
+          <input
+            required
+            type="text"
+            id="description"
+            placeholder="Enter Description"
+          />
         </div>
 
         <div class="add-expense-fields">
           <label>Category</label>
-          <select id="category"></select>
+          <select required id="category"></select>
         </div>
 
         <div class="add-expense-fields">
           <label>Price</label>
-          <input id="price" placeholder="Enter Price" />
+          <input required id="price" placeholder="Enter Price" />
         </div>
       </div>
 
       <div class="contents-in-a-row">
         <div class="add-expense-fields">
           <label>Payment Mode</label>
-          <select id="payment-mode"></select>
+          <select required id="payment-mode"></select>
         </div>
 
         <div class="add-expense-fields">
           <label>Location</label>
-          <input id="location" placeholder="Enter the location" />
+          <input required id="location" placeholder="Enter the location" />
         </div>
       </div>
 
       <div class="add-expense-btn-container">
-        <button type="submit" class="add-expense-btn" id="addExpenseBtn">Add Expense</button>
+        <button type="submit" class="add-expense-btn" id="addExpenseBtn">
+          Add Expense
+        </button>
       </div>
-
     </form>
   </body>
 </html>

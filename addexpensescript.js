@@ -17,15 +17,15 @@ window.addEventListener("DOMContentLoaded", function () {
     console.log(`${year}-${month}-${day}`);
     return `${year}-${month}-${day}`;
   }
-//dynamic: selectId, array, 
+  //dynamic: selectId, array,
   function dynamicDropdown(id, array) {
     const select = document.getElementById(id);
-    
+
     array.forEach((x, i) => {
       const option = document.createElement("option");
       option.textContent = x;
       if (i === 0) {
-        option.value = x;
+        option.value = "";
         option.selected = true;
         option.disabled = true;
       } else {
@@ -33,29 +33,64 @@ window.addEventListener("DOMContentLoaded", function () {
       }
       select.appendChild(option);
     });
-    }
-    const catergoryarray = [
-      "Select a Category",
-      "Essential Living",
-      "Transportation",
-      "Foods and Drinks",
-      "Health and Wellness",
-      "Shopping",
-      "Entertainment",
-      "Finance",
-      "Travel",
-      "Miscellaneous",
-    ];
-    dynamicDropdown('category', catergoryarray);
-    const paymentarray = [
-        "Select a Payment Mode", 
-        "Debit Card", 
-        "Credit Card",
-        "Bank Transfer", 
-        "Cheque", 
-        "UPI",
-        "Mobile Wallet",
-        "Internet Banking"
-    ]
-    dynamicDropdown("payment-mode", paymentarray);
+  }
+  const catergoryarray = [
+    "Select a Category",
+    "Essential Living",
+    "Transportation",
+    "Foods and Drinks",
+    "Health and Wellness",
+    "Shopping",
+    "Entertainment",
+    "Finance",
+    "Travel",
+    "Miscellaneous",
+  ];
+  dynamicDropdown("category", catergoryarray);
+  const paymentarray = [
+    "Select a Payment Mode",
+    "Debit Card",
+    "Credit Card",
+    "Bank Transfer",
+    "Cheque",
+    "UPI",
+    "Mobile Wallet",
+    "Internet Banking",
+  ];
+  dynamicDropdown("payment-mode", paymentarray);
 });
+
+document
+  .getElementById("addexpenseForm")
+  .addEventListener("submit", function () {
+    const date = document.getElementById("date").value;
+    const description = document.getElementById("description").value;
+    const category = document.getElementById("category").value;
+    const price = document.getElementById("price").value;
+    const payment = document.getElementById("payment-mode").value;
+    const location = document.getElementById("location").value;
+
+    const expense = {
+      expensedate: date,
+      expensedescription: description,
+      expensecategory: category,
+      expenseprice: price,
+      expensepayment: payment,
+      expenselocation: location,
+    };
+    console.log(expense);
+    const overallexpense =
+      JSON.parse(localStorage.getItem("overallexpense")) || [];
+    overallexpense.push(expense);
+    localStorage.setItem("overallexpense", JSON.stringify(overallexpense));
+
+    alert("expense added");
+  });
+
+document.querySelector('.hamburger-icon').addEventListener('click', function () {
+    const sidebar = document.querySelector('.side-bar');
+    sidebar.style.display = (sidebar.style.display == 'flex') ? 'none' : 'flex';
+})
+document.getElementById('dashboardpage').addEventListener('click', function () {
+    location.href = "./main.html";
+  })
