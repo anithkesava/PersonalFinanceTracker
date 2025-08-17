@@ -38,18 +38,22 @@ window.addEventListener("DOMContentLoaded", function () {
     if (expenses !== null) {
       //for table columns.
       Object.keys(expenses[0]).forEach((key) => {
-        const th = document.createElement("th");
-        th.textContent = key;
-        table.appendChild(th);
+        if (key !== "expenseid") {
+          const th = document.createElement("th");
+          th.textContent = key;
+          table.appendChild(th);
+        }
       });
 
       //for table rows.
       for (let i = 0; i < expenses.length; i++) {
         const tr = document.createElement("tr");
-        Object.values(expenses[i]).forEach((value) => {
-          const td = document.createElement("td");
-          td.textContent = value;
-          tr.appendChild(td);
+        Object.values(expenses[i]).forEach((value, index) => {
+          if (index !== 0) {
+            const td = document.createElement("td");
+            td.textContent = value;
+            tr.appendChild(td);
+          }
         });
         table.appendChild(tr);
       }
@@ -541,6 +545,11 @@ document
   });
 
 //transaction history button
-document.querySelector('.transaction-history-button').addEventListener('click', function () {
+document
+  .querySelector(".transaction-history-button")
+  .addEventListener("click", function () {
+    location.href = "./transactionhistory.html";
+  });
+document.querySelector(".view-more-btn").addEventListener("click", function () {
   location.href = "./transactionhistory.html";
-  })
+});

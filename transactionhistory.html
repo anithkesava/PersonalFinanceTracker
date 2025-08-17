@@ -5,7 +5,7 @@
     <meta
       charset="UTF-8"
       name="viewport"
-      content="width=device-width; initial-scale=1.0"
+      content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="./transactionstyle.css" />
     <script src="./transaction.js" defer></script>
@@ -16,6 +16,29 @@
     <link rel="icon" type="image/png" href="./images/favicon.png" />
   </head>
   <body>
-        <h1>Transaction History</h1>
+    <nav class="nav-bar">
+      <div class="hamburger-button-container">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <h1 class="custom-h1">Transaction History</h1>
+    </nav>
+    <div class="side-bar">
+      <div class="side-bar-content">
+        <div id="dashboardlink" class="side-bar-link">
+          <i class="fa-solid fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </div>
+      </div>
+    </div>
+    <div class="transaction-history-table-container">
+      <div class="popup-box-container">
+        <span class="pop-up-span"></span>
+        <div class="button-in-row">
+            <button class="ok-btn">OK</button>
+            <button class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+      <table id="transaction-history-table"></table>
+    </div>
   </body>
 </html>

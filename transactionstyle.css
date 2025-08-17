@@ -5,6 +5,11 @@ html, body{
     margin:0;
     padding:0;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 body::before{
     content: "";
@@ -19,4 +24,207 @@ body::before{
     opacity: 0.6;
     z-index: -1;
 }
+.nav-bar{
+    width:100%;
+    height: 5rem;
+    background: linear-gradient(to right, chocolate, darkorange);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamburger-button-container{
+    position: relative;
+    left:2rem;
+    width:3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.85rem;
+    color: white;
+    cursor: pointer;
+}
+.custom-h1{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    width:20rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.transaction-history-table-container{
+    position: relative;
+    top:2rem;
+    border-radius: 0.54rem;
+    height: 35rem;
+    width:90rem;
+    background: rgba(255, 255, 255, 0.5);
+    padding-top:2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+}
+::-webkit-scrollbar{
+    width:0px;
+}
+th{
+    border:1px solid black;
+    text-align: center;
+    text-transform: uppercase;
+    height: 2rem;
+    width:10rem;
+    background-color: rgb(25, 56, 235);
+}
+td{
+    border: 1px solid black;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    background-color: rgb(165, 214, 233);
+    height: 1.75rem;
+    
+}
+.edit-btn{
+    text-transform: capitalize;
+    background-color: blue;
+    font-size: small;
+    height: 1.55rem;
+    width:5rem;
+    font-weight: bold;
+    border:none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in;
+}
+.delete-btn:active{
+    transform: scale(0.9) translateY(2px);
+    box-shadow: 2px 2px 4px rgba(0,0,0);
+}
+.edit-btn:active{
+    transform: scale(0.9) translateY(2px);
+    box-shadow: 2px 2px 4px rgba(0,0,0);
+}
+.delete-btn{
+    text-transform: capitalize;
+    background-color: rgb(245, 44, 44);
+    font-size: small;
+    height: 1.55rem;
+    width:5rem;
+    font-weight: bold;
+    border:none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in;
+}
+.side-bar{
+    position: absolute;
+    height: 15rem;
+    width:20rem;
+    top:5rem;
+    left:1rem;
+    z-index: 1;
+    background-color: rgb(239, 226, 152);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(-20px); 
+    pointer-events: none;
+    transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+
+}
+.side-bar.active{ 
+    opacity: 1;
+    transform: translateY(0); 
+    pointer-events: auto;
+}
+
+.side-bar-content{
+    height: 20rem;
+    width:20rem;
+}
+.side-bar-link{
+    position: relative;
+    top:1rem;
+    padding-left:1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+    height: 2rem;
+    width:15rem;
+    font-weight: bold;
+    transition: transform 0.2s ease-in;
+    cursor: pointer;
+}
+.side-bar-link:hover{
+    transform: translateY(-5px);
+    color: blue;
+}
+.side-bar-link:active{
+    transform: translateY(0px);
+}
+.popup-box-container{
+    position: absolute;
+    background: rgba(255, 255, 255);
+    height: 15rem;
+    width:28rem;
+    border-radius: 0.75rem;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.pop-up-span{
+    text-transform: capitalize;
+    font-size: large;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.button-in-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.ok-btn{
+    font-weight: bold;
+    color:white;
+    background-color: blue;
+    height: 1.75rem;
+    width:6rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+
+
+
+.cancel-btn{
+    font-weight: bold;
+    color:white;
+    background-color: red;
+    height: 1.75rem;
+    width:6rem;
+    border: none;
+    border-radius: 0.25rem;  
+    cursor: pointer;  
+    transition: background-color 0.2s ease-in;
+}
+
 

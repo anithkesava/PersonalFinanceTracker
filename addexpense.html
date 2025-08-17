@@ -26,6 +26,10 @@
         <i class="fas fa-tachometer-alt"></i>
         <span class="sidebar-span">Dashboard</span>
       </div>
+      <div id="viewtransactionpage" class="side-bar-content">
+        <i class="fas fa-table"></i>
+        <span class="sidebar-span">Transaction Page</span>
+      </div>
     </div>
     <form
       id="addexpenseForm"
@@ -55,7 +59,7 @@
 
         <div class="add-expense-fields">
           <label>Price</label>
-          <input required id="price" placeholder="Enter Price" />
+          <input type="number" required id="price" min="0" placeholder="Enter Price" />
         </div>
       </div>
 
