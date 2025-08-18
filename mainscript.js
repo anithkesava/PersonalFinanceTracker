@@ -8,6 +8,14 @@ window.addEventListener("DOMContentLoaded", function () {
   header.appendChild(h1);
   header.appendChild(strong);
 
+  function getCalendarInfo() {
+    const calendarDay = document.querySelector(".calendar-info");
+    const today = new Date();
+    const currentdate = today.toString().split(" ");
+    calendarDay.textContent = `${currentdate[0]}, ${currentdate[1]} ${currentdate[2]}, ${currentdate[3]}`;
+  }
+  getCalendarInfo();
+
   function getCurrentMonthName() {
     const today = new Date();
     const month = today.toDateString().split(" ");
@@ -32,6 +40,27 @@ window.addEventListener("DOMContentLoaded", function () {
   }
   getCurrentMonthIncome();
 
+  function getExpenses() {
+    const expensespan = document.getElementById("getExpense");
+    const overallexpenses = JSON.parse(localStorage.getItem("overallexpense"));
+    let totalexpense = 0;
+    for (let expense of overallexpenses) {
+      totalexpense += parseInt(expense.expenseprice);
+    }
+    expensespan.classList.add("current-month-span");
+    expensespan.textContent = totalexpense;
+    localStorage.setItem("totalexpense", totalexpense);
+  }
+  getExpenses();
+  function getBalance() {
+    const span = document.getElementById("getBalance");
+    span.classList.add("current-month-span");
+    const totalexpense = localStorage.getItem("totalexpense");
+    const income = document.getElementById("getIncome").textContent;
+
+    span.textContent = parseInt(income) - parseInt(totalexpense);
+  }
+  getBalance();
   function getFewTransactionTableData() {
     const table = this.document.getElementById("few-transaction-history-table");
     const expenses = JSON.parse(localStorage.getItem("overallexpense"));

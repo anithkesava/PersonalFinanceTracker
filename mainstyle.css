@@ -46,6 +46,33 @@ strong{
     border-radius: 50%;
     border:none;
 }
+
+.calendar-container{
+    height: 3rem;
+    width:12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    justify-self: center;
+    gap:1rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(to bottom, rgb(255, 43, 89), indigo);
+    transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+    cursor: default;
+}
+.calendar-container:hover{
+    transform: translateY(-20px);
+    box-shadow: 5px 10px 5px rgba(0,0,0);
+}
+.calendar-info{
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+.calendar-icon{
+    color: bisque;
+}
 .title-and-category{
     display: flex;
     flex-direction: column;
@@ -53,7 +80,7 @@ strong{
     align-items: flex-end;
     padding-right: 1rem;
     height: 3rem;
-    width: 10rem;
+    width: 15rem;
     font-weight: bold;
     font-size: medium;
     color: white;

@@ -54,6 +54,7 @@ window.addEventListener("DOMContentLoaded", function () {
     "UPI",
     "Mobile Wallet",
     "Internet Banking",
+    "Cash"
   ];
   dynamicDropdown("payment-mode", paymentarray);
 
